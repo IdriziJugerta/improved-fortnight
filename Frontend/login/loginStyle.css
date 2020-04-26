@@ -1,0 +1,95 @@
+﻿body {
+    background-color: #222629;
+}
+
+.main {
+    background-color: #555151;
+    width: 400px;
+    height: 500px;
+    margin: auto;
+    border: 3px solid #DAF7A6;
+    margin-top: 50px;
+}
+
+.sign {
+    padding-top: 40px;
+    color: #DAF7A6;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.un {
+    width: 76%;
+    color: #222629;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-align: center;
+    background: #555151;
+    padding: 10px 20px;
+    border-bottom: 2px solid #DAF7A6;
+    margin-left: 46px;
+    margin-bottom: 27px;
+}
+
+form.form1 {
+    padding-top: 40px;
+}
+
+.pass {
+    width: 76%;
+    color: #222629;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-align: center;
+    background: #555151;
+    padding: 10px 20px;
+    border-bottom: 2px solid #DAF7A6;
+    margin-left: 46px;
+    margin-bottom: 27px;
+}
+
+
+.btn1 {
+    cursor: pointer;
+    border-radius: 5em;
+    color: #222629;
+    background: #DAF7A6;
+    border: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-left: 35%;
+    font-size: 13px;
+}
+
+.btn2 {
+    cursor: pointer;
+    border-radius: 5em;
+    color: #222629;
+    background: #DAF7A6;
+    border: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-left: 30%;
+    font-size: 13px;
+}
+
+.noAcc {
+    color: #263238;
+}
+
+a {
+    color: #DAF7A6;
+}
+
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+}

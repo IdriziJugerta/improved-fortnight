@@ -9,7 +9,7 @@
     <body>
    
         <?php
-        
+//do te afishohen te gjitha shfaqjet me imazhin dhe emrin te cilat jane te klikueshme dhe te cojne ne faqen perkatese te shfaqjes
             while($row=mysqli_fetch_assoc($rez)){
                 echo"<div>
             <a href='shfaqja.php?shfaqje_id=".$row['shfaqje_id']."'>

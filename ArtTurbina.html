@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>ArtTurbina</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqRQUzG8s_7YAqkbG7nxTRD41eul1dMwA"></script>
+
+    <script>
+        //koordinatat e teatrit ArtTurbina
+        var myCenter = new google.maps.LatLng(41.314848, 19.815401);
+
+            function teater1() {
+
+                //vecorite e hartes
+                var mapProp = {
+                    center: myCenter,
+                    zoom: 15,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                };
+
+                //krijimi i hartes
+                var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+                //krijimi i shenjuesit qe do shenjoj tek koordinatat e teatrit
+                var marker = new google.maps.Marker({
+                    position: myCenter
+                });
+
+                //vendosja e shenjuesit mbi harte
+                marker.setMap(map);
+
+                //krijimi i info window qe do te tregoj emrin e teatrit
+                var infowindow = new google.maps.InfoWindow({
+                    content: "<b>ArtTurbina</b>"
+                });
+
+                //vendosja e info window ne harte dhe hapja e objektit mbi shenjues
+                infowindow.open(map, marker);
+
+            }
+    </script>
+</head>
+<body onload="teater1()">
+    <div id="googleMap" style="width:1700px;height:700px;"></div>
+</body>
+</html>

@@ -38,11 +38,8 @@ if(isset($_POST['g'])){
     {
     $sql = "INSERT INTO user (username, userPass, emer, mbiemer, moshe, gjini, telefon, email) VALUES ('$username','$password', '$emer' ,'$mbiemer','$moshe','$gjini','$tel','$email')";
     $rez = mysqli_query($conn, $sql)or die(mysqli_error($conn));
-    if ($rez) {
+   
        header("Location:login.php");
-    }else{
-        echo"sbehet";
-    }
 }
 }
 ?>
@@ -54,7 +51,7 @@ if(isset($_POST['g'])){
     <title>Registration</title>
 </head>
 <body>
-    <img src="logo.png" class="logo" />
+    <img src="images/logo.png" class="logo" />
     <div class="mainREG">
         <form method="POST" action="">
             <div class="formEle">

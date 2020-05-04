@@ -1,7 +1,7 @@
 <?php
-    session_start();
-    require_once 'dbcon.php';
-    $sql="SELECT * FROM shfaqje";
+  include 'include/header.php';
+  require_once 'include/dbcon.php';
+  $sql="SELECT * FROM shfaqje";
     $rez=mysqli_query($conn,$sql);
 ?>
 
@@ -13,7 +13,7 @@
             while($row=mysqli_fetch_assoc($rez)){
                 echo"<div>
             <a href='shfaqja.php?shfaqje_id=".$row['shfaqje_id']."'>
-            <p><img src='".$row['image']."'></p>
+            <p><img src='images/".$row['image']."'></p>
             <p>".$row['shfaqje_emer']."</p>
             </a>
             </div>";

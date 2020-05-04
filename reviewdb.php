@@ -1,6 +1,6 @@
 <?php
 session_start();
-    require_once 'dbcon.php';
+    require_once 'include/dbcon.php';
     $shfaqje=mysqli_real_escape_string($conn,$_GET['shfaqje_id']);
     $id=$_SESSION['userId'];
     if(isset($_POST["sendrev"])){
@@ -19,6 +19,6 @@ session_start();
         }
         }
         else echo "<script type='text/javascript'>alert('Ploteso fushen')</script>";
-    }else{ echo "<script type='text/javascript'>alert('Nuk jeni loguar')</script>";}
+    }
 
 ?>

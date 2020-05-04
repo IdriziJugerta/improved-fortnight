@@ -1,0 +1,47 @@
+/*-----------------------------NAVIGATION-------------------------------*/
+
+#nav-bar
+ {
+	position : sticky;
+	top : 0;
+	z-index : 10;
+	margin-top: 0px;
+ }
+  .navbar-brand img
+ {
+	 height: 95px;
+	 padding-left: 30px;
+ }
+  .navbar-nav li
+ {
+	 padding: 0	10px;
+ }
+  .navbar-nav li a
+ {
+	float : right ;
+	 text-align: left;
+ }
+ 
+ #nav-bar ul li a:hover
+ {
+	color: 49672e!important;
+ }
+ 
+ .navbar 
+ {
+	background: black; 
+ }
+ .navbar-toggler
+ {
+	 border: none!important;
+ }
+ .nav-link
+ {
+	 color: #555!important;
+	 font-weight: 600;
+	 font-size: 20px;
+ }
+.bg-custom-2 {
+background-image: black;
+}
+ 

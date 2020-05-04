@@ -1,0 +1,80 @@
+
+/*--------------------------------------------------------------register sign up-----------------------------------------*/
+.center {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+}
+
+/*---------------------------------------------------------------footer---------------------------------------------------------------------------------------------------*/
+#footer
+{
+	left: 0;
+    bottom: 0;
+    width: 100%;
+	margin-top: 120px;
+	padding-top: 20px;
+	padding-bottom: 100px;
+	background-color: black;
+	color: rgb(0, 139, 19);
+}
+.footer-logo
+{
+	width: 300px;
+	margin-top: 25px;
+	margin-bottom:15px;
+	
+}
+#footer h6
+{
+	color: green;
+	font-size: 15px;
+	text-align: left;
+	margin-top: 15px;
+	margin-bottom: 15px;
+} 
+#footer h6::after
+{
+	content: '';
+	background: green;
+	display: block;
+	height: 3px;
+	width: 150px;
+	margin-left: 0px; 
+	margin-top: 20px;
+}
+
+
+.fa-phone-square
+{
+	color: green;
+}
+.fa-home
+{
+	color: green;
+}
+#footer .city
+{
+	margin-left: 37px;
+}
+#footer .copyright
+{
+	margin-bottom: -80px;
+	text-align: center;
+	font-size: 15px;
+color : green;
+}
+
+ #footer .fab fa-facebook-f{
+	color : dodgerblue;
+}
+
+a:hover {
+    color:green;
+  }
+  
+
+.fab fa-twitter
+{
+	color: deepskyblue;
+}

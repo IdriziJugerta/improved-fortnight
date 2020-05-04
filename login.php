@@ -21,14 +21,13 @@ if (isset($_POST['submit'])) {
         session_start();
         $_SESSION['username'] = $username;
         $_SESSION['userId']=$row['userId'];
-        $_SESSION['loguar']=true;
         $_SESSION['type']=$row['userType'];
         // kontrollojme nese perdoruesi eshte admin apo user dhe e drejtojme te faqja perkatese
         if($_SESSION['type']=="0"){
             header("Location:admin.php");
         }
         else{
-            header("Location:homepage.php");
+            header("Location:index.php");
         }
     }
     else header("Location:login.php?error=nouser");
@@ -44,7 +43,7 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-    <img src="logo.png" class="logo" />
+    <img src="images/logo.png" class="logo" />
     <div class="main">
         <p class="sign" align="center">Login Now</p>
 <?php

@@ -1,11 +1,10 @@
 <?php
-//krijojme nje sesion
-    session_start();
-    require_once 'dbcon.php';
+require_once 'include/dbcon.php';
+include 'include/header.php';
  //kontrollojme nese perdoruesi ka shtypur butonin dergo nga form perkatese
-    if(isset($_GET['dergo'])){
+    if(isset($_GET['submitsrch'])){
         //perdorim kete funksion per te mos ekzekutuar ne databaze kod qe mund te shkruhet ne fushat e  inputit
-        $search=mysqli_real_escape_string($conn,$_GET['srch']);
+        $search=mysqli_real_escape_string($conn,$_GET['search']);
         //marrim rreshtat te cilat plotesojne kushtet
         $sql="SELECT * FROM shfaqje WHERE shfaqje_emer LIKE '%$search%' or zhaner LIKE '%$search%'
          or cast LIKE '%$search%' or pershkrim LIKE '%$search%'";
@@ -35,7 +34,7 @@ else{
 
     ?>
                
-            </body>
-            </html>
+    </body>
+     </html>
 
 

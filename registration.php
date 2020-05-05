@@ -1,5 +1,5 @@
 ﻿<?php
-require_once 'include/dbcon.php';
+require_once 'includes/dbcon.php';
 
 if (isset($_POST['submit'])) {
     

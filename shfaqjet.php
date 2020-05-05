@@ -1,6 +1,6 @@
 <?php
-  include 'include/header.php';
-  require_once 'include/dbcon.php';
+  include 'includes/header.php';
+  require_once 'includes/dbcon.php';
   $sql="SELECT * FROM shfaqje";
     $rez=mysqli_query($conn,$sql);
 ?>

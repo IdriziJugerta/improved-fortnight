@@ -1,6 +1,6 @@
 <?php
 session_start();
-    require_once 'include/dbcon.php';
+    require_once 'includes/dbcon.php';
     $shfaqje=mysqli_real_escape_string($conn,$_GET['shfaqje_id']);
     $id=$_SESSION['userId'];
     if(isset($_POST["sendrev"])){

@@ -14,18 +14,18 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-
+<!-- 
 <script language="javascript" type="text/javascript" 
 src="footerTHE@HO.html"></script>
 <script language="javascript" type="text/javascript" 
-      src="header.html"></script>
+      src="header.html"></script> -->
 </head>
 
 <body style="background-color:black;text-align:center">
 
 <!-----------------------------------------------HEADER-------------------------------------------------------------------------------------------------------------------->
 <?php
-include 'include\header.php';
+include 'includes/header.php';
 ?>
 <!------------------------------------------------------------  SLIDER  ---------------------------------------------------------------------------------------------->
 <div id="slider">
@@ -38,17 +38,17 @@ include 'include\header.php';
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="images\pic5.png"
+      <img src=".\images\pic5.png"
 	  class="d-block w-100">
     </div>
 	
     <div class="carousel-item">
-   <a href= '#'> <img src="images\galaksia.jpg" 
+   <a href= '#'> <img src=".\images\galaksia.jpg" 
 	  class="d-block w-100" > </a>
 	</div>
 	
     <div class="carousel-item">
-      <a href= '#'><img src="images\udha e qumshtit1.jpg" class="d-block w-100" > </a>
+      <a href= '#'><img src=".\images\udha e qumshtit1.jpg" class="d-block w-100" > </a>
 	  
     </div>
   </div>
@@ -72,17 +72,17 @@ include 'include\header.php';
 
 <div class="row">
     <div class="column">
-        <a href= '#'> <img src="images\heroinat.jpg"  style="width:100%"><p>“HEROIDES” – HEROINAT
+        <a href= '#'> <img src=".\images\heroinat.jpg"  style="width:100%"><p>“HEROIDES” – HEROINAT
         Letrat e heroinave të mitit nga antikiteti e deri më sot nga
         Heroides i Ovidio-s</p>
     </div>
     <div class="column">
-        <a href= '#'>  <img src="images\galaksia1.jpg"  style="width:100%"><p>“Lufta e artistit për të thënë të vërtetën deri në fund me veprën e tij dhe mospranimi apo gati-gati ekzekutimi i veprës dhe artistit nga shteti!
+        <a href= '#'>  <img src=".\images\galaksia1.jpg"  style="width:100%"><p>“Lufta e artistit për të thënë të vërtetën deri në fund me veprën e tij dhe mospranimi apo gati-gati ekzekutimi i veprës dhe artistit nga shteti!
              A janë betejat triumfuese?!
              Apo ajo që ndodh është masakër?! Të vërtetën e zbulojmë në “ArTurbina”</p>
       </div>
     <div class="column">
-        <a href= '#'> <img src="images\udha e qumshtit.jpg"  style="width:100%"><p>”Udha e qumështit” në vetvete përmban një eksperiencë të veçantë, bëhet fjalë për një histori të shkurtër,
+        <a href= '#'> <img src=".\images\udha e qumshtit.jpg"  style="width:100%"><p>”Udha e qumështit” në vetvete përmban një eksperiencë të veçantë, bëhet fjalë për një histori të shkurtër,
            një histori që ka ndodhur para viteve ‘90 me një personazh konkret real.</p>
     </div>
     
@@ -91,7 +91,7 @@ include 'include\header.php';
 
 <!-------------------------------------------------------------------------FOOTER SECTION--------------------------------------------------------------------------------->
 <?php
-include 'include\footerTHE@HO.html';
+include 'includes\footerTHE@HO.php';
 ?>
     
 </body>

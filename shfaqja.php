@@ -1,6 +1,6 @@
 <?php
-include 'include/header.php';
-require_once 'include/dbcon.php';
+include 'includes/header.php';
+require_once 'includes/dbcon.php';
     //merret id  e shfaqjes se klikuar nga url
     $idSh=mysqli_real_escape_string($conn,$_GET['shfaqje_id']);
     

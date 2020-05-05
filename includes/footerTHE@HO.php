@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
-  <link rel="stylesheet" type="text/css" href="footer.css">
+  <link rel="stylesheet" type="text/css" href="includes\footer.css">
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
@@ -34,7 +34,7 @@
           <!-- Grid column -->
          
           <div class="col-md-3">
-              <img src="/images/logo.png" class="footer-logo">
+              <img src="./images/logo.png" class="footer-logo">
               
               </div>
           <!-- Grid column -->
@@ -45,16 +45,16 @@
           <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
             <h6 class="text-uppercase mb-4 font-weight-bold">Teatrot ne Tirane</h6>
             <p>
-              <a href="/maps/ArtTurbina.html">ArtTurbina</a>
+              <a href="./maps/ArtTurbina.html">ArtTurbina</a>
             </p>
             <p>
-              <a href="/maps/metropol.html">Metropol</a>
+              <a href="./maps/metropol.html">Metropol</a>
             </p>
             <p>
-              <a href="/maps/TK.html">Teatri Kombetar</a>
+              <a href="./maps/TK.html">Teatri Kombetar</a>
             </p>
             <p>
-              <a href="/maps/TEksperimental.html">Teatri Eksperimental</a>
+              <a href="./maps/TEksperimental.html">Teatri Eksperimental</a>
             </p>
           </div>
           <!-- Grid column -->
@@ -149,9 +149,9 @@
     
         </div>
         <!-- Grid row -->
-    
       </div>
       <!-- Footer Links -->
+      <?php if((!isset($_SESSION['userId'])) ){?>
       <ul class="center">
           <li class="list-inline-item">
             <h5 class="mb-1">Register for free</h5>
@@ -160,6 +160,7 @@
             <a href="registration.php" class="btn btn-danger btn-rounded">Sign up!</a>
           </li>
         </ul>
+      <?php } ?>
     </footer>
     <!-- Footer -->
   

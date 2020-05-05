@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 ?>
 <DOCTYPE! html>
 <html>
@@ -8,7 +7,7 @@ session_start();
 <head>
 <title>THE@HO</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="header.css">
+<link rel="stylesheet" href="includes\header.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
@@ -49,7 +48,7 @@ session_start();
     //nese user nuk do jete i logguar  do shfaqet log in
      if((!isset($_SESSION['userId'])) ){
    echo' <li class="nav-item">
-    <a class="nav-link " href="login.php" >Log In</a>
+    <a class="nav-link " href="./login.php" >Log In</a>
     </li>';
      }
     ?>
@@ -68,7 +67,7 @@ session_start();
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <!-- profil do t ehsfqeqt vetem nese user eshte i loguar -->
+  <!-- profil do te shfaqet vetem nese user eshte i loguar -->
   <?php if(isset($_SESSION['userId'])) { ?>
   <div class="collapse navbar-collapse" id="navbar-list-4">
     <ul class="navbar-nav">
@@ -86,9 +85,6 @@ session_start();
   </div>
   <?php } ?>
 </nav>
-
-  
-
 </section>
 
 </body>

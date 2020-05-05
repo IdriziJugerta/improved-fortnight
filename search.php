@@ -1,6 +1,6 @@
 <?php
-require_once 'include/dbcon.php';
-include 'include/header.php';
+require_once 'includes/dbcon.php';
+include 'includes/header.php';
  //kontrollojme nese perdoruesi ka shtypur butonin dergo nga form perkatese
     if(isset($_GET['submitsrch'])){
         //perdorim kete funksion per te mos ekzekutuar ne databaze kod qe mund te shkruhet ne fushat e  inputit

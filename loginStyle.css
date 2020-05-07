@@ -1,6 +1,6 @@
 ﻿/* css Login */
 body {
-    background-color: #222629;
+    background-image: url('images/backg.jpg');
 }
 
 .main {
@@ -8,19 +8,19 @@ body {
     width: 400px;
     height: 500px;
     margin: auto;
-    border: 3px solid #DAF7A6;
+    border: 3px solid #D2D2CB;
     margin-top: 50px;
 }
 
 .login {
     padding-top: 40px;
-    color: #DAF7A6;
+    color: #D2D2CB;
     font-weight: bold;
     font-size: 23px;
 }
 .sign {
     padding-top: 40px;
-    color: #DAF7A6;
+    color: #D2D2CB;
     font-weight: bold;
     font-size: 23px;
 }
@@ -35,7 +35,7 @@ body {
     text-align: center;
     background: #555151;
     padding: 10px 20px;
-    border-bottom: 2px solid #DAF7A6;
+    border-bottom: 2px solid #D2D2CB;
     margin-left: 46px;
     margin-bottom: 27px;
 }
@@ -53,7 +53,7 @@ form.form1 {
     text-align: center;
     background: #555151;
     padding: 10px 20px;
-    border-bottom: 2px solid #DAF7A6;
+    border-bottom: 2px solid #D2D2CB;
     margin-left: 46px;
     margin-bottom: 27px;
 }
@@ -63,7 +63,7 @@ form.form1 {
     cursor: pointer;
     border-radius: 5em;
     color: #222629;
-    background: #DAF7A6;
+    background: #D2D2CB;
     border: 0;
     padding-left: 30px;
     padding-right: 30px;
@@ -73,26 +73,12 @@ form.form1 {
     font-size: 13px;
 }
 
-.btn2 {
-    cursor: pointer;
-    border-radius: 5em;
-    color: #222629;
-    background: #DAF7A6;
-    border: 0;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    margin-left: 30%;
-    font-size: 13px;
-}
-
 .noAcc {
     color: #263238;
 }
 
 a {
-    color: #DAF7A6;
+    color: #D2D2CB;
 }
 
 .logo {
@@ -111,6 +97,12 @@ a {
     color: white;
     margin-bottom: 5px;
 }
+.fpass{
+    margin: 0 auto; 
+    display:block; 
+    text-align: center;
+}
+
 /* css Regjistrim: ka gjithashtu vlera te njejta me loginin ne body dhe klasen btn1, logo */
 
 .formEle {
@@ -124,7 +116,7 @@ input {
     background: #B7C0A8;
     display: block;
     border: none;
-border-bottom: 2px solid #DAF7A6;
+    border-bottom: 2px solid #D2D2CB;
 }
 
 .mainREG {
@@ -132,13 +124,13 @@ border-bottom: 2px solid #DAF7A6;
     width: 400px;
     height: 930px auto;
     margin: auto;
-    border: 3px solid #DAF7A6;
+    border: 3px solid #D2D2CB;
     margin-top: 50px;
 }
 
 .reg {
     padding-top: 5px;
-    color: #DAF7A6;
+    color: #D2D2CB;
     font-weight: bold;
     font-size: 23px;
 }

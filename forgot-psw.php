@@ -13,7 +13,7 @@ if (isset($_POST['submit'])){
     $token=bin2hex(random_bytes(32));
     $email=$_POST['email'];
 
-    $url="http://localhost/web/projekt-web/createpsw.php?token=".$token."&email=".$email."";
+    $url="http://localhost/web/web-project/createpsw.php?token=".$token."&email=".$email."";
     //marrim email e derguar nga user
 
     //kontrolllojme nese email i dhene eshte i regjistruar

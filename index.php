@@ -16,9 +16,9 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 <!-- 
 <script language="javascript" type="text/javascript" 
-src="footerTHE@HO.html"></script>
+src="footerTHE@HO.php"></script>
 <script language="javascript" type="text/javascript" 
-      src="header.html"></script> -->
+      src="header.php"></script> -->
 </head>
 
 <body style="background-color:black;text-align:center">

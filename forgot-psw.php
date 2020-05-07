@@ -73,7 +73,7 @@ if (isset($_POST['submit'])){
 
 <body>
     <img src="images/logo.png" class="logo" />
-    <div class="main">
+    <div class="mainfp">
         <p class="sign" align="center">Forgot Password?</p>
        <form class="form1" action=""  method="post">
             <input class="un " type="email" align="center" name ="email" placeholder="Please enter you email">

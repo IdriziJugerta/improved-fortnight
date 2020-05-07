@@ -21,7 +21,7 @@ if(isset($_POST['reset'])){
             $sql="SELECT * FROM pswreset WHERE pswtoken='$tkn'";
             $rez = mysqli_query($conn, $sql)or die(mysqli_error($conn));
             if(!$row=mysqli_fetch_assoc($rez)){
-                header("Location:forgot-psw.php?reset=exp");
+                header("Location:forgot-psw.php?reset=error");
                 exit();
                 }  
                 $emailres=$row["pswemail"];

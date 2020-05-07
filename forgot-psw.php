@@ -98,12 +98,6 @@ if (isset($_GET['reset'])){
     }else if(($_GET['reset'])=="nothex"){
         echo'<p class="error">Not hex.</p>';
     }
-    else if(($_GET['reset'])=="notsamehash"){
-        echo'<p class="error">Not the same hash.</p>';
-    }
-    else if(($_GET['reset'])=="exp"){
-        echo'<p class="error">databaze error.</p>';
-    }
 }
 ?>
 </body>

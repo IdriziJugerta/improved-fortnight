@@ -8,7 +8,7 @@ session_start();
 require_once 'includes/dbcon.php';
 if (isset($_POST['submit'])){
 
-    //$selector= bin2hex(random_bytes(8));
+   
     //krijojme nje token dhe url e cila do i dergohet userit per te bere reset
     $token=bin2hex(random_bytes(32));
     $email=$_POST['email'];
@@ -46,7 +46,8 @@ if (isset($_POST['submit'])){
             $mail->Host="smtp.gmail.com";
             $mail->SMTPAuth=true;
             $mail->Username="provatheatre@gmail.com";
-            $mail->Password="the@ho123";
+	    //password po e heq per arsye sigurie 
+            $mail->Password=""; //do vendoset password i gmail
             $mail->SMTPSecure = 'tls';           
             $mail->SMTPDebug = 2;
             $mail->Port = 587;

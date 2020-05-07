@@ -69,7 +69,7 @@ if (isset($_POST['submit'])) {
             <button class="btn1" type="submit" name="submit">Log in</button><br><br>
             <p class="noAcc" align="center">Don't have an account?  <a href="registration.php">Sign up</a> </p>
         </form> 
-    <a href='forgot-psw.php'>Forgot password?</a>
+    <a href='forgot-psw.php' class="fpass">Forgot password?</a>
 </body>
 
 </html>

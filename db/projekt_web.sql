@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 26, 2020 at 04:42 PM
+-- Generation Time: May 07, 2020 at 02:43 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -47,6 +47,19 @@ CREATE TABLE `orar` (
   `idShfaq` int(11) NOT NULL,
   `ora_fillimi` time NOT NULL,
   `date_shfaqje` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pswreset`
+--
+
+CREATE TABLE `pswreset` (
+  `pswresetId` int(11) NOT NULL,
+  `pswemail` text NOT NULL,
+  `pswtoken` longtext NOT NULL,
+  `expire` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -123,7 +136,7 @@ CREATE TABLE `user` (
   `gjini` varchar(10) NOT NULL,
   `telefon` int(12) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `userType` int(1) NOT NULL
+  `userType` int(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -145,6 +158,12 @@ ALTER TABLE `orar`
   ADD PRIMARY KEY (`idOrar`),
   ADD KEY `idSalle` (`idSalle`),
   ADD KEY `idShfaq` (`idShfaq`);
+
+--
+-- Indexes for table `pswreset`
+--
+ALTER TABLE `pswreset`
+  ADD PRIMARY KEY (`pswresetId`);
 
 --
 -- Indexes for table `rezervim`
@@ -195,6 +214,12 @@ ALTER TABLE `opinion`
 --
 ALTER TABLE `orar`
   MODIFY `idOrar` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `pswreset`
+--
+ALTER TABLE `pswreset`
+  MODIFY `pswresetId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `rezervim`

@@ -16,7 +16,7 @@ if (isset($_POST['submit'])){
     $url="http://localhost/web/web-project/createpsw.php?token=".$token."&email=".$email."";
     //marrim email e derguar nga user
 
-    //kontrolllojme nese email i dhene eshte i regjistruar
+    //kontrollojme nese email i dhene eshte i regjistruar
     $sqlE="SELECT * from user WHERE email='$email'";
     $rezE = mysqli_query($conn, $sqlE) or die(mysqli_error($conn));
     if(!$row=mysqli_fetch_assoc($rezE)){
@@ -46,8 +46,7 @@ if (isset($_POST['submit'])){
             $mail->Host="smtp.gmail.com";
             $mail->SMTPAuth=true;
             $mail->Username="provatheatre@gmail.com";
-	    //password po e heq per arsye sigurie 
-            $mail->Password=""; //do vendoset password i gmail
+            $mail->Password="the@ho123"; 
             $mail->SMTPSecure = 'tls';           
             $mail->SMTPDebug = 2;
             $mail->Port = 587;

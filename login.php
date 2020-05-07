@@ -54,15 +54,22 @@ if (isset($_POST['submit'])) {
     }
     else if(($_GET['error'])=="nouser"){
         echo'<p class="error">This user does not exist. Check the information you have entered.</p>';
+        }
     }
-}
+        if (isset($_GET['reset'])){
+            if(($_GET['reset'])=="success"){
+                echo'<p class="error">Login with new password!</p>';
+            }
+        }
+
 ?>
-       <form class="form1"  method="post">
+       <form class="form1" action="" method="post">
             <input class="un " type="text" align="center" name ="username" placeholder="Username">
             <input class="pass" type="password" align="center" name="password" placeholder="Password">
             <button class="btn1" type="submit" name="submit">Log in</button><br><br>
             <p class="noAcc" align="center">Don't have an account?  <a href="registration.php">Sign up</a> </p>
         </form> 
+    <a href='forgot-psw.php'>Forgot password?</a>
 </body>
 
 </html>

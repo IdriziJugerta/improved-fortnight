@@ -26,21 +26,49 @@ if(isset($_POST['g'])){
       
     if(mysqli_num_rows($res_u)> 0 ){
         header("Location:registration.php?error=usernametaken");
-    }else if(mysqli_num_rows($res_e)> 0){
-        header("Location:registration.php?error=emailtaken");
-
-    }else if($password!=$passRep){
-        header("Location:registration.php?error=nomatch");
-    }else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        header("Location:registration.php?error=invalidemail");
+        exit();
     }
-    else
-    {
+
+    if(mysqli_num_rows($res_e)> 0){
+        header("Location:registration.php?error=emailtaken");
+        exit();
+    }
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        header("Location:registration.php?error=invalidemail");
+        exit();
+    }
+    if(!preg_match('/^[a-zA-Z]{2,20}$/',$emer)) {
+        header("Location:registration.php?error=invalidname");
+        exit();
+    }
+    if(!preg_match('/^[a-zA-Z]{2,20}$/',$mbiemer)) {
+        header("Location:registration.php?error=invalidlname");
+        exit();
+    }
+    if(!preg_match('/^[a-zA-Z0-9]{4,10}$/',$username)) {
+        header("Location:registration.php?error=invaliduname");
+        exit();
+    }
+    if($password!=$passRep){
+        header("Location:registration.php?error=nomatch");
+        exit();
+    }
+    if($moshe<18){
+        header("Location:registration.php?error=invalidage");
+        exit();
+    }
+
+    if(!preg_match('/^06[6-9]{1}+[0-9]{7}$/',$tel)) {
+        header("Location:registration.php?error=invalidphone");
+        exit();
+    }
+
     $sql = "INSERT INTO user (username, userPass, emer, mbiemer, moshe, gjini, telefon, email) VALUES ('$username','$password', '$emer' ,'$mbiemer','$moshe','$gjini','$tel','$email')";
     $rez = mysqli_query($conn, $sql)or die(mysqli_error($conn));
    
        header("Location:login.php");
-}
+
 }
 ?>
 <html>
@@ -60,16 +88,31 @@ if(isset($_POST['g'])){
             //do afishohen mesazhet perkatese per secilin error
                 if (isset($_GET['error'])){
                 if(($_GET['error'])=="nomatch"){
-                echo'<p class="error">The password do not match.</p>';
-                }else if (($_GET['error'])=="usernametaken") {
+                echo'<p class="error">The password do not match.</p>';}
+                 if (($_GET['error'])=="usernametaken") {
                 echo'<p class="error">A user has already registered with this username.</p>';
                 }
-                else if (($_GET['error'])=="emailtaken") {
+                if (($_GET['error'])=="emailtaken") {
                     echo'<p class="error">A user has already registered with this email.</p>';
                     }
-                else if (($_GET['error'])=="invalidemail") {
+                 if (($_GET['error'])=="invalidemail") {
                     echo'<p class="error">Please enter a valid email.</p>';
                         }
+                 if (($_GET['error'])=="invaliduname") {
+                     echo'<p class="error">Username must be between 4 and 10 characters (numbers or letters).</p>';
+                      }     
+                if (($_GET['error'])=="invalidname") {
+                    echo'<p class="error">First Name must be between 2 and 20 characters (only letters).</p>';
+                     }
+                if (($_GET['error'])=="invalidlname") {
+                    echo'<p class="error">Last Name must be between 2 and 20 characters (only letters).</p>';
+                     }  
+                if (($_GET['error'])=="invalidphone") {
+                    echo'<p class="error">Please enter a valid phone number.</p>';
+                     }
+                if (($_GET['error'])=="invalidage") {
+                    echo'<p class="error">You must be at least 18.</p>';
+                     }                               
                 } 
                 ?>
 
@@ -83,7 +126,7 @@ if(isset($_POST['g'])){
                     <input type="text" placeholder="Enter Userame" name="un" required /><br>
 
                     <label for="email"><b>Email</b></label>
-                    <input type="text" placeholder="Enter Email" name="email" required><br>
+                    <input type="email" placeholder="Enter Email" name="email" required><br>
 
                     <label for="psw"><b>Password</b></label>
                     <input type="password" placeholder="Enter Password" name="psw" required><br>

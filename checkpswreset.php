@@ -24,8 +24,9 @@ if(isset($_POST['reset'])){
                 header("Location:forgot-psw.php?reset=error");
                 exit();
                 }  
-                $emailres=$row["pswemail"];
-            $sqlUpd="UPDATE user set userPass='$psw' WHERE email='$emailres'"; 
+            $emailres=$row["pswemail"];
+            $pswhash=password_hash($psw,PASSWORD_DEFAULT);
+            $sqlUpd="UPDATE user set userPass='$pswhash' WHERE email='$emailres'"; 
             $rezUp = mysqli_query($conn, $sqlUpd)or die(mysqli_error($conn));
             header("Location:login.php?reset=success");
             }

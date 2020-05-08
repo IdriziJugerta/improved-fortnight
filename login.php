@@ -13,11 +13,13 @@ if (isset($_POST['submit'])) {
     }
     else{
     // kontrollojme nese user ndodhet ne databaze
-    $sql= "SELECT * FROM user WHERE username='$username' AND userPass='$password'";
+    $sql= "SELECT * FROM user WHERE username='$username'";
+
     $rez = mysqli_query($conn, $sql) or die(mysqli_error($conn));
-    $nrRez = mysqli_num_rows($rez);
-    if ($nrRez == 1) {
+
+    if (mysqli_num_rows($rez) == 1) {
         $row=mysqli_fetch_assoc($rez);
+        if(password_verify($password,$row['userPass'])){
         session_start();
         $_SESSION['username'] = $username;
         $_SESSION['userId']=$row['userId'];
@@ -29,6 +31,9 @@ if (isset($_POST['submit'])) {
         else{
             header("Location:index.php");
         }
+    }
+        else header("Location:login.php?error=wrongpsw");
+        exit();
     }
     else header("Location:login.php?error=nouser");
     exit();
@@ -52,11 +57,17 @@ if (isset($_POST['submit'])) {
     if(($_GET['error'])=="emptyinput"){
         echo'<p class="error">Please fill all the fields!</p>';
     }
-    else if(($_GET['error'])=="nouser"){
+    if(($_GET['error'])=="wrongpsw"){
+        echo'<p class="error">The password is incorrect.</p>';
+        }
+    if(($_GET['error'])=="nouser"){
         echo'<p class="error">This user does not exist. Check the information you have entered.</p>';
         }
+    
     }
-        if (isset($_GET['reset'])){
+        
+    
+    if (isset($_GET['reset'])){
             if(($_GET['reset'])=="success"){
                 echo'<p class="error">Login with new password!</p>';
             }

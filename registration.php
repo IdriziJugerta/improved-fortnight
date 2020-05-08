@@ -50,6 +50,10 @@ if(isset($_POST['g'])){
         header("Location:registration.php?error=invaliduname");
         exit();
     }
+    if(!preg_match('/^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{5,}$/',$password)) {
+        header("Location:registration.php?error=invalidpsw");
+        exit();
+    }
     if($password!=$passRep){
         header("Location:registration.php?error=nomatch");
         exit();
@@ -63,8 +67,8 @@ if(isset($_POST['g'])){
         header("Location:registration.php?error=invalidphone");
         exit();
     }
-
-    $sql = "INSERT INTO user (username, userPass, emer, mbiemer, moshe, gjini, telefon, email) VALUES ('$username','$password', '$emer' ,'$mbiemer','$moshe','$gjini','$tel','$email')";
+    $hashpsw=password_hash($password,PASSWORD_DEFAULT);
+    $sql = "INSERT INTO user (username, userPass, emer, mbiemer, moshe, gjini, telefon, email) VALUES ('$username','$hashpsw', '$emer' ,'$mbiemer','$moshe','$gjini','$tel','$email')";
     $rez = mysqli_query($conn, $sql)or die(mysqli_error($conn));
    
        header("Location:login.php");
@@ -86,9 +90,10 @@ if(isset($_POST['g'])){
                 <p class="reg" align="center">Registration</p>
             <?php
             //do afishohen mesazhet perkatese per secilin error
-                if (isset($_GET['error'])){
+            if (isset($_GET['error'])){
                 if(($_GET['error'])=="nomatch"){
-                echo'<p class="error">The password do not match.</p>';}
+                echo'<p class="error">The password do not match.</p>';
+                }
                  if (($_GET['error'])=="usernametaken") {
                 echo'<p class="error">A user has already registered with this username.</p>';
                 }
@@ -105,8 +110,14 @@ if(isset($_POST['g'])){
                     echo'<p class="error">First Name must be between 2 and 20 characters (only letters).</p>';
                      }
                 if (($_GET['error'])=="invalidlname") {
-                    echo'<p class="error">Last Name must be between 2 and 20 characters (only letters).</p>';
+                   echo'<p class="error">Last Name must be between 2 and 20 characters (only letters).</p>';
+                    }
+                if (($_GET['error'])=="invalidpsw") {
+                    echo'<p class="error">Password must contain at least 6 characters, at least one letter and one number.</p>';
                      }  
+                if (($_GET['error'])=="invalidphone") {
+                    echo'<p class="error">Please enter a valid phone number.</p>';
+                     }
                 if (($_GET['error'])=="invalidphone") {
                     echo'<p class="error">Please enter a valid phone number.</p>';
                      }

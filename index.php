@@ -67,28 +67,18 @@ include 'includes/header.php';
 
 
 
-<!---------------------------------------------------------------------  shfaqjet--------------------------------------- -------------------------------------------->
-
-
+<!---------------------------------------------------------------------  shfaqjet e fundit --------------------------------------- -------------------------------------------->
 <div class="row">
+<?php
+require_once 'includes/dbcon.php';
+$sql = "SELECT * FROM shfaqje ORDER BY shfaqje_id DESC LIMIT 3";
+$rez=mysqli_query($conn,$sql) or die(mysqli_error($conn));
+while($row=mysqli_fetch_assoc($rez)){ ?>
     <div class="column">
-        <a href= '#'> <img src=".\images\heroinat.jpg"  style="width:100%"><p>“HEROIDES” – HEROINAT
-        Letrat e heroinave të mitit nga antikiteti e deri më sot nga
-        Heroides i Ovidio-s</p>
+        <a href= 'shfaqja.php?shfaqje_id=<?php echo $row['shfaqje_id'];?>'> <img src=".\images\<?php echo $row['image']?>"  style="width:100%"><p><?php echo substr($row['pershkrim'],0,150);?>...</p>
     </div>
-    <div class="column">
-        <a href= '#'>  <img src=".\images\galaksia1.jpg"  style="width:100%"><p>“Lufta e artistit për të thënë të vërtetën deri në fund me veprën e tij dhe mospranimi apo gati-gati ekzekutimi i veprës dhe artistit nga shteti!
-             A janë betejat triumfuese?!
-             Apo ajo që ndodh është masakër?! Të vërtetën e zbulojmë në “ArTurbina”</p>
-      </div>
-    <div class="column">
-        <a href= '#'> <img src=".\images\udha e qumshtit.jpg"  style="width:100%"><p>”Udha e qumështit” në vetvete përmban një eksperiencë të veçantë, bëhet fjalë për një histori të shkurtër,
-           një histori që ka ndodhur para viteve ‘90 me një personazh konkret real.</p>
-    </div>
-    
-  </div>
-  
-
+<?php } ?>
+</div>
 <!-------------------------------------------------------------------------FOOTER SECTION--------------------------------------------------------------------------------->
 <?php
 include 'includes\footerTHE@HO.php';

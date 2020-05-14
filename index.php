@@ -75,7 +75,7 @@ $sql = "SELECT * FROM shfaqje ORDER BY shfaqje_id DESC LIMIT 3";
 $rez=mysqli_query($conn,$sql) or die(mysqli_error($conn));
 while($row=mysqli_fetch_assoc($rez)){ ?>
     <div class="column">
-        <a href= 'shfaqja.php?shfaqje_id=<?php echo $row['shfaqje_id'];?>'> <img src=".\images\<?php echo $row['image']?>"  style="width:100% display:table"><p><?php echo substr($row['pershkrim'],0,150);?>...</p>
+        <a href= 'shfaqja.php?shfaqje_id=<?php echo $row['shfaqje_id'];?>'> <img src=".\images\<?php echo $row['image']?>"  style="width:100% "><p><?php echo substr($row['pershkrim'],0,150);?>...</p>
     </div>
 <?php } ?>
 </div>

@@ -12,7 +12,36 @@ if($nrQuery>0){
 ?>
 <!DOCTYPE html>
     <body>
-    <h3>Personal Information </h3>        
+    <style>
+    .imazh {
+  background-image: url("images/background.jpeg");
+
+  height: 670px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+table, td  {  
+  border: 1px solid grey;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 20%;
+}
+
+ td {
+  padding: 8px;
+}
+h2{
+    font-family: "Comic Sans MS", cursive, sans-serif	
+;
+}
+    </style>
+<div class="imazh">
+    <h2>Personal Information </h2>        
         <table>
                     <tr>                
                      <td>Username :</td><td><?php echo $row['username'] ?></td>   
@@ -36,5 +65,5 @@ if($nrQuery>0){
                      <td>Email :</td><td><?php echo $row['email'] ?></td> 
                     </tr>             
         </table> 
-      
+     </div> 
     </body>

@@ -1,67 +1,116 @@
 <?php
-require_once 'includes/header.php';
-require_once 'includes/dbcon.php';
-    $id=$_GET['userId'];
-    
-    $sql="SELECT * FROM user WHERE userId='$id'";
-    $rez=mysqli_query($conn,$sql) or die (mysqli_error($conn));
-    $row=mysqli_fetch_assoc($rez);
-
-    
+require_once 'includes/header.php';    
 ?>
 
 <!DOCTYPE html>
-<body>
-    <h3>Edit Profile</h3>    
+<html lang="en">
+<head>
+  <title>Edit Profile</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <style>
+    body{
+    background-image: url("images/background.jpeg");
+    height: 900px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    }
+
+    </style>
+</head>
+<body> 
     <?php
      if (isset($_GET['error'])){
         if (($_GET['error'])=="usernametaken") {
-        echo'<p class="error">This username is taken.</p>';
+        echo'<div class="alert alert-dark  w-2 d-inline-block" role="alert">This username is taken.</div>';
         }
         if (($_GET['error'])=="invaliduname") {
-         echo'<p class="error">Username must be between 4 and 10 characters (numbers or letters).</p>';
+         echo'<div class="alert alert-dark  w-2 d-inline-block" role="alert">Username must be between 4 and 10 characters (numbers or letters).</div>';
         }
         if (($_GET['error'])=="emailtaken") {
-         echo'<p class="error">There is an account linked with this email.</p>';
+         echo'<div class="alert alert-dark  w-2 d-inline-block" role="alert">There is an account linked with this email.</div>';
         }
         if (($_GET['error'])=="invalidname") {
-         echo'<p class="error">First Name must be between 2 and 20 characters (only letters).</p>';
+         echo'<div class="alert alert-dark  w-2 d-inline-block" role="alert">First Name must be between 2 and 20 characters (only letters).</div>';
         }
         if (($_GET['error'])=="invalidlname") {
-         echo'<p class="error">Last Name must be between 2 and 20 characters (only letters).</p>';
+         echo'<div class="alert alert-dark  w-2 d-inline-block" role="alert">Last Name must be between 2 and 20 characters (only letters).</div>';
         }
         if (($_GET['error'])=="invalidphone") {
-        echo'<p class="error">Please enter a valid phone number.</p>';
+        echo'<div class="alert alert-dark  w-2 d-inline-block" role="alert">Please enter a valid phone number.</div>';
         }
         if(($_GET['error'])=="nomatch"){
-        echo'<p class="error">The password do not match.</p>';
+        echo'<div class="alert alert-dark  w-2 d-inline-block" role="alert">The password do not match.</div>';
         }
         if (($_GET['error'])=="invalidpsw") {
-        echo'<p class="error">Password must contain at least 6 characters, at least one letter and one number.</p>';
+        echo'<div class="alert alert-dark  w-2 d-inline-block" role="alert">Password must contain at least 6 characters, at least one letter and one number.</div>';
         }
         if (($_GET['error'])=="wrongpsw") {
-        echo'<p class="error">The old password you have entered is incorrect.</p>';
+        echo'<div class="alert alert-dark  w-2 d-inline-block" role="alert">The old password you have entered is incorrect.</div>';
         }
         if (($_GET['error'])=="invalidemail") {
-        echo'<p class="error">Please enter a valid email.</p>';
+        echo'<div class="alert alert-dark  w-2 d-inline-block" role="alert">Please enter a valid email.</div>';
        }
     }  
- ?>     
-    <form action="editProfProcces.php" method="post" >
-        Username : <input type="text" name="username"><br>
-        First Name :   <input type="text" name="emer"><br>
-        Last Name : <input type="text" name="mbiemer"><br>
-        Phone number: <input type="number" name="tel"><br>
-        Email : <input type="email" name="email" ><br>
-        <input type="submit" name="submit" value="Submit">
+ ?>  
+<div class='d-flex justify-content-center align-items-center' >
+    <form class="text-center" action="editProfProcces.php" method="post">
+        <p class="h4 mb-4 text-secondary">Edit Profile</p>
 
-        <form action="editProfProcces.php" method="post" >
-        <h3>Change password</h3>
-        Old password : <input type="password" name="oldpsw"><br>
-        New password: <input type="password" name="newpsw"><br>
-        Repeat new password : <input type="password" name="rep"><br>
-        <input type="submit" name="change" value="Change">
+        <div class="form-row mb-4">
+            
+          <div class="form-group col-xs-5 col-lg-6">
+            <!-- First name -->
+            <input type="text" class="form-control" name="emer" placeholder="First name">
+          </div>
+          <div class="form-group col-xs-5 col-lg-6">
+            <!-- Last name -->
+            <input type="text" class="form-control" name="mbiemer" placeholder="Last name">
+          </div>
+        </div>
+        <div class="form-group col-xs-5 col-lg-13">
+        <!-- username -->
+        <input type="text"  class="form-control mb-4" name="username" placeholder="Username">
+        </div>
+    
+        <div class="form-group col-xs-5 col-lg-13">
+        <!-- E-mail -->
+        <input type="email" class="form-control mb-4" name="email" placeholder="E-mail">
+        </div>
 
+        <div class="form-group col-xs-5 col-lg-13">
+        <!-- Phone number -->
+        <input type="number" class="form-control" name="tel" placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+        </div>
+        <br>
+        <button type="submit" name="submit" class="btn btn-secondary" >Update Profile</button>
+        <hr>
     </form>
-    </body>
+</div>
+<div class='d-flex justify-content-center align-items-center' >
+        <form class="text-center" action="editProfProcces.php" method="post" >
+        <p class="h4 mb-4 text-secondary">Change Password</p>
+         <div class="form-row mb-4"></div>
+        <div class="form-group col-xs-5 col-lg-13">
+        <input type="password" class="form-control mb-4" name="oldpsw" placeholder="Old Password">
+        </div>
+        <div class="form-row mb-4">
+        <div class="form-group col-xs-5 col-lg-13">
+        <input type="password" class="form-control mb-4" name="newpsw" placeholder="New Password">
+        </div>
+        <div class="form-group col-xs-5 col-lg-13">
+        <input type="password" class="form-control mb-4" name="rep" placeholder="Repeat New Password">
+        </div>
+        </div>
+        <button type="submit" name="change" class="btn btn-secondary">Update Password</button>
+        </form>
+</div>
+</body>
 </html> 

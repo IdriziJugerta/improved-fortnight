@@ -13,27 +13,48 @@ include 'includes/header.php';
     }
 ?>
 <!DOCTYPE html>
-<body>
+<style>
+* {
+  box-sizing: border-box;
+}
 
+.column1 {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row1::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+<body>
+<div class= "row1">
     <?php
     
 if($nrQuery>0){
     echo "U gjenden ".$nrQuery." rezultate";
     while($row=mysqli_fetch_assoc($rez)){
         //afishojme rezulatet e gjetura nga query  i mesiperm
+      
         echo"<div>
         <a href='shfaqja.php?shfaqje_id=".$row['shfaqje_id']."'>
         <h3>".$row['shfaqje_emer']."</h3></a>
             <p>".$row['pershkrim']."</p>
-        </div>";
+        </div>"; 
+    
     }
 }
 else{
    echo "nuk ka rezultate";
 }
 
+
     ?>
-               
+   </div>            
     </body>
      </html>
 

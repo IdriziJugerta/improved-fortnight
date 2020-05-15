@@ -16,7 +16,7 @@ if($nrQuery>0){
     .imazh {
   background-image: url("images/background.jpeg");
 
-  height: 670px;
+  height: 700px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

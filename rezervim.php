@@ -23,7 +23,11 @@ $v=mysqli_fetch_assoc($result);
 $query1="select * from teater where teater_id='".$kodTeater."'";
 $result1=mysqli_query($conn,$query1);
 $v1=mysqli_fetch_assoc($result1);
-    
+
+//marrim te dhenat e shfaqjes
+$sql="SELECT * FROM shfaqje WHERE shfaqje_id='$kodShfaqje'";
+$rez=mysqli_query($conn,$sql) or die(mysql_error($conn));
+$row=mysqli_fetch_assoc($rez);   
 ?>
 <html>
 
@@ -78,18 +82,19 @@ $v1=mysqli_fetch_assoc($result1);
 
                   <input placeholder="Phone Number" type="text" name="pNumber" required>
 
-                  <input type="text" value="<?php echo $v['ora_fillimi'];?>">
+                  <input type="text" name ="orar" value="<?php echo $v['ora_fillimi'];?>">
 
-                  <input type="text" value="<?php echo $v['date_shfaqje'];?>">
+                  <input type="text" name ="date" value="<?php echo $v['date_shfaqje'];?>">
 
-                  <input type="text" value="<?php echo $v1['teater_emer'];?>">
+                  <input type="text" name ="tEmer" value="<?php echo $v1['teater_emer'];?>">
 
-                  <input type="text" value="<?php echo $v['emer_salle'];?>">
+                  <input type="text" name ="tSalle" value="<?php echo $v['emer_salle'];?>">
 
                   <input type="number" name="noSeats" placeholder="numri i vendeve">
 
                   <input type="number" name="pagesa" placeholder="cmimi/seat" value="100" min="100" max="100">
                   <input type="hidden" name="orari" value="<?php echo $orari;?>">
+                  <input type="hidden" name="shfaqja" value="<?php echo $row['shfaqje_emer'];?>">
                   <input type="hidden" name="user" value="<?php echo $_SESSION['userId'];?>">
 
 

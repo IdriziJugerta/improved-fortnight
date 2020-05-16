@@ -1,0 +1,20 @@
+﻿body {
+    background-color: #6B6D6A;
+    color: white;
+}
+
+.crudBtn {
+    background-color: #7F8C8D;
+    border: 1px solid black;
+    color: black;
+    width: 100px;
+}
+
+.link {
+    color: black;
+}
+
+td {
+    height: 50px;
+    width: 100px;
+}

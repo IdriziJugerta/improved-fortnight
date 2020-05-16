@@ -105,13 +105,14 @@ require_once 'includes/dbcon.php';
                 <td> 
                       <?php
                          // do marrim oraret ne te cilat shfaqja do te jepet ne teatrot e ndryshme
-                           $sqlOr="SELECT DISTINCT ora_fillimi FROM salle INNER JOIN teater ON t_id= teater_id INNER JOIN orar 
+                           $sqlOr="SELECT DISTINCT idOrar,ora_fillimi FROM salle INNER JOIN teater ON t_id= teater_id INNER JOIN orar 
                            ON salle_id=idSalle where idShfaq='$idSh' and teater_id='".$row2['teater_id']."'";
                            $rezOr=mysqli_query($conn,$sqlOr) or die(mysqli_error($conn));
                 while($rowOr=mysqli_fetch_assoc($rezOr))
                 {?>
                 <!-- afishojme oraret -->
-                <a href ="rezervim.php?orar=<?php echo $rowOr['ora_fillimi'];?>&shfaqje_id=<?php echo $idSh;?>&teater_id=<?php echo $row2['teater_id'];?>"><button> <?php echo date('h:i A',strtotime($rowOr['ora_fillimi']));?></button></a>
+                <a href ="rezervim.php?orar=<?php echo $rowOr['idOrar'];?>&shfaqje_id=<?php echo $idSh;?>&teater_id=<?php echo $row2['teater_id'];?>">
+                <button> <?php echo date('h:i A',strtotime($rowOr['ora_fillimi']));?></button></a>
                </div>
                 <?php } ?> 
                  </td>

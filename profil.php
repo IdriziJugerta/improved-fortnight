@@ -3,6 +3,9 @@ include 'includes/header.php';
 require_once 'includes/dbcon.php';
 
 $user=mysqli_real_escape_string($conn,$_GET['userId']);
+
+
+
 $sql="SELECT * FROM user WHERE userId='$user'";
 $rez=mysqli_query($conn,$sql);
 $nrQuery=mysqli_num_rows($rez);

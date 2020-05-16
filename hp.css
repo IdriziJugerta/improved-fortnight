@@ -51,7 +51,7 @@ body{ background-color: black;}
     display: table;
   }
   a:link {
-    color: rgb(18, 145, 60);
+    color:#505050;
   }
   
   a:hover {

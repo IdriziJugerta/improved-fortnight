@@ -59,7 +59,7 @@ session_start();
     </ul>
     <form class="form-inline my-2 my-lg-0" action="search.php" method="get">
     <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="submitsrch">Search</button>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="submitsrch" style="color:#505050">Search</button>
     </form> 
   </div>
   

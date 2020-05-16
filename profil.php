@@ -41,6 +41,7 @@ table {
 h2{
     font-family: "Comic Sans MS", cursive, sans-serif	
 ;
+color:white;
 }
     </style>
 <div class="imazh">

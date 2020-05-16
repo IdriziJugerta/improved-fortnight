@@ -138,7 +138,7 @@ require_once 'includes/dbcon.php';
              //per te shfaqur form te review kontrollojme nese kemi nje user te loguar
              if(isset($_SESSION['userId'])){ ?>
             <div class = "column">
-             <form action="reviewdb.php?shfaqje_id='.$idSh.'" method="post"> <textarea  rows="4" cols="50" name ="review" placeholder="Give a review" required > </textarea><input type="submit" name="sendrev">
+             <form action="reviewdb.php?shfaqje_id=<?php echo $idSh ?>" method="post"> <textarea  rows="4" cols="50" name ="review" placeholder="Give a review" required > </textarea><input type="submit" name="sendrev">
              </form>
               
     <?php }?>

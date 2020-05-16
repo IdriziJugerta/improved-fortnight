@@ -14,42 +14,38 @@ include 'includes/header.php';
 ?>
 <!DOCTYPE html>
 <style>
-* {
-  box-sizing: border-box;
+
+.imazh {
+  background-image: url("images/enjoy.jpg");
+  height: 700px;
+  background-position: right;
+  background-repeat: no-repeat;
+ border:   border:1px solid black;
+  position: relative;
 }
 
-.column1 {
-  float: left;
-  width: 33.33%;
-  padding: 5px;
-}
-
-/* Clearfix (clear floats) */
-.row1::after {
-  content: "";
-  clear: both;
-  display: table;
-}
 </style>
 <body>
-<div class= "row1">
+<div class= "imazh">
     <?php
     
 if($nrQuery>0){
-    echo "U gjenden ".$nrQuery." rezultate";
-    while($row=mysqli_fetch_assoc($rez)){
-        //afishojme rezulatet e gjetura nga query  i mesiperm
-      
-        echo"<div>
-        <a href='shfaqja.php?shfaqje_id=".$row['shfaqje_id']."'>
-        <h3>".$row['shfaqje_emer']."</h3></a>
-            <p>".$row['pershkrim']."</p>
-        </div>"; 
+  echo "<h2 style = 'color:	#505050;'>U gjenden ".$nrQuery." rezultate </h2>";
+  while($row=mysqli_fetch_assoc($rez)){
+      //afishojme rezulatet e gjetura nga query  i mesiperm
     
-    }
+      echo"<div style= 'float: left;
+      width: 100%;
+      padding: 5px;'>
+      <a href='shfaqja.php?shfaqje_id=".$row['shfaqje_id']."'>
+      <h3 style= 'text-align: left; color:	#D3D3D3';>".$row['shfaqje_emer']."</h3></a>
+          <p style= 'text-align: left;  color:	#505050;' } '>" .substr($row['pershkrim'],0,150)."...</p>
+      </div>"; 
+  
+  }
 }
 else{
-   echo "nuk ka rezultate";
+ echo "nuk ka rezultate";
 }
 
 

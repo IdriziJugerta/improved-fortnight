@@ -78,88 +78,89 @@ require_once 'includes/dbcon.php';
 
 
 
-<div class = "row"  >    <!---"container1" ---   "topleft"-  "container"---------topright---container2---bottomright------------------------>
+<div class = "row"  > 
 
             <?php
                  if($row=mysqli_fetch_assoc($rez)){ ?>
                     <!-- afishohen te dhenat e shfaqjes -->
-                      <div class = "column"> <div class="topleft"> <p> <img src='images/<?php echo $row['image']; ?>'></p>  <h3><?php echo $row['shfaqje_emer']; ?></h3>  <p><?php echo $row['zhaner']; ?></p>  <p><?php echo substr($row['pershkrim'],0,150);?>...</p>  <p>Cast : <?php echo $row['cast']; ?></p > </div>
+                      <div class = "column"> 
+                              <p> <img src='images/<?php echo $row['image']; ?>'style= "width:25%  ">
+                              </p>  <h3><?php echo $row['shfaqje_emer']; ?></h3>  <p><?php echo $row['zhaner']; ?></p> 
+                               <p><?php echo substr($row['pershkrim'],0,150);?>...</p>  <p>Cast : <?php echo $row['cast']; ?></p >
+                       
                      
         
             <?php } ?>
 
     
-  <table>
+        <table>
                    <!-- afishojme teatrot dhe kohet e shfaqjeve -->
-                    <?php
+   <?php
         
-                    while($row2=mysqli_fetch_assoc($rez2)){
-                     $sqlt="SELECT * FROM teater WHERE teater_id='".$row2['teater_id']."'";
-                     $rezt=mysqli_query($conn,$sqlt)  or die(mysqli_error($conn));
-                     while($rowOr=mysqli_fetch_assoc($rezt))
-                     {?>
-              <div class="column">  <tr>                
-                        <!-- afishojme teatrot -->
-                <td><?php echo $rowOr['teater_emer']." , ".$rowOr['adrese']?> </td> 
-                     <?php } ?> 
-                <td> 
-                      <?php
+                             while($row2=mysqli_fetch_assoc($rez2)){
+                             $sqlt="SELECT * FROM teater WHERE teater_id='".$row2['teater_id']."'";
+                             $rezt=mysqli_query($conn,$sqlt)  or die(mysqli_error($conn));
+                             while($rowOr=mysqli_fetch_assoc($rezt))
+                           {?>
+         
+                      <tr>                
+                               <!-- afishojme teatrot -->
+                               <td><?php echo $rowOr['teater_emer']." , ".$rowOr['adrese']?> </td> 
+                    <?php } ?> 
+                              <td> 
+                    <?php
                          // do marrim oraret ne te cilat shfaqja do te jepet ne teatrot e ndryshme
                            $sqlOr="SELECT DISTINCT idOrar,ora_fillimi FROM salle INNER JOIN teater ON t_id= teater_id INNER JOIN orar 
                            ON salle_id=idSalle where idShfaq='$idSh' and teater_id='".$row2['teater_id']."'";
                            $rezOr=mysqli_query($conn,$sqlOr) or die(mysqli_error($conn));
-                while($rowOr=mysqli_fetch_assoc($rezOr))
-                {?>
+                          while($rowOr=mysqli_fetch_assoc($rezOr))
+                    {?>
                 <!-- afishojme oraret -->
                 <a href ="rezervim.php?orar=<?php echo $rowOr['idOrar'];?>&shfaqje_id=<?php echo $idSh;?>&teater_id=<?php echo $row2['teater_id'];?>">
                 <button> <?php echo date('h:i A',strtotime($rowOr['ora_fillimi']));?></button></a>
-               </div>
+          </div>
                 <?php } ?> 
                  </td>
                </tr>
             <?php 
             }     
-        ?>
-        </table>
-        </div>
+     ?>
+    </table>
+</div>
 
    
+<div class="row">
 
-
-
-
-
-
-
-        <div class= "row">
-
-         <!--div class ="row"-->    
+  
     <?php 
              //per te shfaqur form te review kontrollojme nese kemi nje user te loguar
              if(isset($_SESSION['userId'])){ ?>
-            <div class = "column">
-             <form action="reviewdb.php?shfaqje_id=<?php echo $idSh ?>" method="post"> <textarea  rows="4" cols="50" name ="review" placeholder="Give a review" required > </textarea><input type="submit" name="sendrev">
-             </form>
+            <div class column>
+             <form action="reviewdb.php?shfaqje_id=<?php echo $idSh ?>" method="post">
+              <textarea  rows="4" cols="50" name ="review" placeholder="Give a review" required > 
+              </textarea><input type="submit" name="sendrev">
+              </form>
               
-    <?php }?>
+             <?php }?>
 
 
         <?php
             //afishojme review-et e bera te dukshme per user e regjistruar dhe per vizitoret
-         if(mysqli_num_rows($rez1)>0){
+            if(mysqli_num_rows($rez1)>0){
             while($row1=mysqli_fetch_assoc($rez1)){ ?>
-<div class="column"><h4><?php echo $row1['username']; ?></h4> <p><?php echo $row1['review']; ?></p></div>
+           
+      <h4 style= ' color:	#D3D3D3';>
+      <?php echo $row1['username']; ?></h4> <p style= '  color:	#505050;' } >
+        <?php echo $row1['review']; ?></p> </div>
           
       <?php  }     
        }
     ?>
-     </div>
-     <!--/div-->
+</div> 
 
 
 
 
-      
-               
+            
      </body>
  </html>

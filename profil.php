@@ -41,7 +41,9 @@ table {
 }
 h3{
   text-align : left;
-    font-family: "Comic Sans MS", cursive, sans-serif	;
+    font-family: "Comic Sans MS", cursive, sans-serif	
+;
+color:white;
 }
 </style>
 <div class="imazh">

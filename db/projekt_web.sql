@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 07, 2020 at 02:43 PM
+-- Generation Time: May 17, 2020 at 04:21 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -129,7 +129,7 @@ CREATE TABLE `teater` (
 CREATE TABLE `user` (
   `userId` int(11) NOT NULL,
   `username` varchar(20) NOT NULL,
-  `userPass` varchar(10) NOT NULL,
+  `userPass` text NOT NULL,
   `emer` varchar(20) NOT NULL,
   `mbiemer` varchar(20) NOT NULL,
   `moshe` int(11) NOT NULL,

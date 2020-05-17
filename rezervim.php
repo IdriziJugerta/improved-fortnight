@@ -30,7 +30,12 @@ $v1=mysqli_fetch_assoc($result1);
 //marrim te dhenat e shfaqjes
 $sql="SELECT * FROM shfaqje WHERE shfaqje_id='$kodShfaqje'";
 $rez=mysqli_query($conn,$sql) or die(mysql_error($conn));
-$row=mysqli_fetch_assoc($rez);   
+$row=mysqli_fetch_assoc($rez); 
+
+//marrim te dhenat e userit
+$sql="SELECT * FROM user WHERE userId='$user'";
+$rez=mysqli_query($conn,$sql) or die(mysql_error($conn));
+$rowu=mysqli_fetch_assoc($rez); 
 ?>
 <html>
 
@@ -188,11 +193,11 @@ $row=mysqli_fetch_assoc($rez);
             <div class="booking-form-container">
                 <form method="post" action="rezervo.php">
 
-                  <input placeholder="First Name" type="text" name="fName" required>
+                  <input placeholder="First Name" type="text" name="fName"  value="<?php echo $rowu['emer']?>">
 
-                  <input placeholder="Last Name" type="text" name="lName">
+                  <input placeholder="Last Name" type="text" name="lName" value="<?php echo $rowu['mbiemer']?>">
 
-                  <input placeholder="Phone Number" type="text" name="pNumber" required>
+                  <input placeholder="Phone Number" type="text" name="pNumber" value="<?php echo $rowu['telefon']?>" >
 
                   <input type="text" name ="orar" value="<?php echo $v['ora_fillimi'];?>">
 
@@ -202,9 +207,9 @@ $row=mysqli_fetch_assoc($rez);
 
                   <input type="text" name ="tSalle" value="<?php echo $v['emer_salle'];?>">
 
-                  <input type="number" name="noSeats" placeholder="numri i vendeve">
+                  <input type="number" id="seats" name="noSeats" placeholder="numri i vendeve" oninput="calcPrice()">
 
-                  <input type="number" name="pagesa" placeholder="cmimi/seat" value="100" min="100" max="100">
+                  <input type="number" id="pay" name="pagesa" placeholder="cmimi" min="100">
                   <input type="hidden" name="orari" value="<?php echo $orari;?>">
                   <input type="hidden" name="shfaqja" value="<?php echo $row['shfaqje_emer'];?>">
                   <input type="hidden" name="user" value="<?php echo $_SESSION['userId'];?>">
@@ -226,10 +231,14 @@ $row=mysqli_fetch_assoc($rez);
 
 }
 ?>
-
-
                 </form>
               </div>
     </form>
+    <script>
+        function calcPrice() {
+  var x = document.getElementById("seats").value;
+  document.getElementById("pay").value = x*100;
+}
+    </script>
   </body>
 </html>

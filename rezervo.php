@@ -7,13 +7,13 @@ $user=$_POST['user'];
 $orari=$_POST['orari'];
 $seats=$_POST['noSeats'];
 $pagesa=$_POST['pagesa'];
-$cmimi=$seats*$pagesa;
 $status=1;
+$_SESSION['shfaqje']=$_POST['shfaqja'];
 
-$query="insert into rezervim(user_id,orarId,no_seats,total_pagese,status) values('".$user."','".$orari."','".$seats."','".$cmimi."','".$status."')";
+$query="insert into rezervim(user_id,orarId,no_seats,total_pagese,status) values('".$user."','".$orari."','".$seats."','".$pagesa."','".$status."')";
 $result=mysqli_query($conn,$query);
 if($result)
-echo "<h2> Rezervimi u be.</h2><h4>Te dhenat ndodhen tashme ne emailin tuaj.</h4>";
+echo "<h2> Rezervimi u be.</h2><h4>Te dhenat ndodhen tashme ne emailin tuaj.</h4><br><br><br>";
 else
 echo mysqli_error($conn);
 // DERGIMI NE EMAIL 
@@ -91,14 +91,14 @@ exit();
 ?>
 
 <!DOCTYPE html>
+<head>
+<script
+    src="https://www.paypal.com/sdk/js?client-id=AdPL6ygaOlizOZ-hT-a-RSvWcYacqaInboNkkG4sjBMTKU4FcldJZ7KlSO7L4pPlH8s6AOdzQd33stCd"> // Required. Replace SB_CLIENT_ID with your sandbox client ID.
+  </script>
+</head>
     <body>
-<div class ="imazh"> <img src="images\mask1.jpg" >  </div>
     <style>
-    .imazh {
- 
- position: center;
-        max-width: 100%;
-  height: auto;}
+
   h2{
     font-family: "Comic Sans MS", cursive, sans-serif	
 ;
@@ -110,5 +110,42 @@ h4{
 color:white;
 }
     </style>
+    <h4>Mund te beni dhe pagese online</h4><br><br>
+    <div id="paypal-button-container" style="width: 400px; margin: 0 auto;"></div>
+
+    <!-- PAGESA ONLINE -->
+    <script>
+    var lek=  <?php echo $pagesa?>*0.0088;
+    paypal.Buttons({
+    style: {
+            size : 'responsive',        
+          shape: 'pill',
+          color: 'silver',
+          layout: 'vertical',
+          label: 'buynow',
+          
+      },
+    
+    createOrder: function(data, actions) {
+      // This function sets up the details of the transaction, including the amount and line item details.
+      return actions.order.create({
+        purchase_units: [{
+          amount: {
+            value:lek
+          }
+        }]
+      });
+    },
+    onApprove: function(data, actions) {
+      // This function captures the funds from the transaction.
+      return actions.order.capture().then(function() {
+        // This function shows a transaction success message to your buyer.
+        window.location = "paypal-transaction-complete.php?orderID="+data.orderID;				
+        
+      });
+    }
+  }).render('#paypal-button-container');
+  //This function displays Smart Payment Buttons on your web page.
+    </script>
     </body>
     </html>

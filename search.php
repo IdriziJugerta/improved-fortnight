@@ -30,7 +30,7 @@ include 'includes/header.php';
     <?php
     
 if($nrQuery>0){
-  echo "<h2 style = 'color:	#505050;'>U gjenden ".$nrQuery." rezultate </h2>";
+  echo "<h3 style = 'color:	#505050;'>U gjenden ".$nrQuery." rezultate </h3>";
   while($row=mysqli_fetch_assoc($rez)){
       //afishojme rezulatet e gjetura nga query  i mesiperm
     
@@ -38,8 +38,8 @@ if($nrQuery>0){
       width: 100%;
       padding: 5px;'>
       <a href='shfaqja.php?shfaqje_id=".$row['shfaqje_id']."'>
-      <h3 style= 'text-align: left; color:	#D3D3D3';>".$row['shfaqje_emer']."</h3></a>
-          <p style= 'text-align: left;  color:	#505050;' } '>" .substr($row['pershkrim'],0,150)."...</p>
+      <h4 style= 'text-align: left; color:	#D3D3D3';>".$row['shfaqje_emer']."</h4></a>
+          <p style= 'text-align: left; width: 700px; color:	#505050;' } '>" .substr($row['pershkrim'],0,150)."...</p>
       </div>"; 
   
   }

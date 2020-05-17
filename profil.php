@@ -33,7 +33,7 @@ table, td  {
 
 table {
   border-collapse: collapse;
-  width: 20%;
+  width: 40%;
 }
 
  td {

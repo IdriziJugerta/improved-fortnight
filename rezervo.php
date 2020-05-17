@@ -13,7 +13,7 @@ $status=1;
 $query="insert into rezervim(user_id,orarId,no_seats,total_pagese,status) values('".$user."','".$orari."','".$seats."','".$cmimi."','".$status."')";
 $result=mysqli_query($conn,$query);
 if($result)
-echo "<h2> Rezervimi u be.</h2>";
+echo "<h2> Rezervimi u be.</h2><h4>Te dhenat ndodhen tashme ne emailin tuaj.</h4>";
 else
 echo mysqli_error($conn);
 // DERGIMI NE EMAIL 
@@ -92,7 +92,7 @@ exit();
 
 <!DOCTYPE html>
     <body>
-<div class ="imazh"> <img src="images\logo.png" width= "1600" height="500">  </div>
+<div class ="imazh"> <img src="images\mask1.jpg" >  </div>
     <style>
     .imazh {
  
@@ -102,7 +102,12 @@ exit();
   h2{
     font-family: "Comic Sans MS", cursive, sans-serif	
 ;
-
+color:white;
+}
+h4{
+    font-family: "Comic Sans MS", cursive, sans-serif	
+;
+color:white;
 }
     </style>
     </body>

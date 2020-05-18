@@ -30,7 +30,7 @@ html {
 }
 .data{
   height: 700px;
-  background-image: url("thKid.jpg");
+  background-image: url("images/thKid.jpg");
  background-repeat: no-repeat;
  background-position: 70% 50%;
   background-size: 550px 500px;
@@ -67,16 +67,16 @@ a {
 <body>
 
 <div class="header">
-  <center><img src="adminlogo.png" alt="adminLogo" id="adminl"><br>Admin Profile
+  <center><img src="images/adminlogo.png" alt="adminLogo" id="adminl"><br>Admin Profile
 </center>
 </div>
 
 <div class="sidebar">
     <ul>
-    <li><img src="theatre.jpg" height="75" width="75"> <a href="teaterCRUD.php" target="_blank">Teater</a></li>
-    <li><img src="shfaqje.jpg" height="75" width="75"> <a href="shfaqje.php" target="_blank">Shfaqje</a></li>
-    <li><img src="salle.jpg" height="75" width="75"> <a href="salle.php" target="_blank">Salle</a></li>
-    <li><img src="time.jpg" height="75" width="75"> <a href="orarCRUD.php" target="_blank">Orar</a></li>
+    <li><img src="images/theatre.jpg" height="75" width="75"> <a href="teaterCRUD.php" target="_blank">Teater</a></li>
+    <li><img src="images/shfaqje.jpg" height="75" width="75"> <a href="shfaqje.php" target="_blank">Shfaqje</a></li>
+    <li><img src="images/salle.jpg" height="75" width="75"> <a href="salle.php" target="_blank">Salle</a></li>
+    <li><img src="images/time.jpg" height="75" width="75"> <a href="orarCRUD.php" target="_blank">Orar</a></li>
     </ul>
   </div>
 

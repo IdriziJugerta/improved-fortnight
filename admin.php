@@ -4,10 +4,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body {
-  
+ 
   margin:0px;
   border:0px;
-
 }
 
 html {
@@ -21,7 +20,6 @@ html {
   background-color: black;
   color: white;
 }
-
 
 .sidebar {
   padding:30px;
@@ -50,6 +48,18 @@ weight:60px;
 ul li {
     padding: 20px;
     border-bottom: 2px solid grey;
+}
+ ul li:hover {
+        background: #6B6D6A;
+        color: white;
+    }
+
+img {
+    padding-right: 10px;
+}
+
+a {
+    color: black;
 }
 
 </style>

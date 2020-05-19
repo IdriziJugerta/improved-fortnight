@@ -14,6 +14,7 @@ $result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
 <body>
 </br>
 </br>
+<a href='admin.php' class='link' align='center'>Admin Page</a>
 <form name="frmShow" method="post" action="">
 <table border="1" cellpadding="10" cellspacing="3" width="500" align="center" style="padding-top:25px;">
 <tr>

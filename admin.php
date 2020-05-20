@@ -4,9 +4,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body {
- 
+  
   margin:0px;
   border:0px;
+
 }
 
 html {
@@ -20,6 +21,7 @@ html {
   background-color: black;
   color: white;
 }
+
 
 .sidebar {
   padding:30px;
@@ -62,6 +64,19 @@ a {
     color: black;
 }
 
+.logout-container{
+  float: right;
+  padding: 8px 12px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #D2D2CB;
+  color: #222629;
+  font-size: 17px;
+  font-family: Times New Roman;
+  border-radius: 5em;
+  cursor: pointer;
+}
+
 </style>
 </head>
 <body>
@@ -69,6 +84,11 @@ a {
 <div class="header">
   <center><img src="images/adminlogo.png" alt="adminLogo" id="adminl"><br>Admin Profile
 </center>
+<form align="right" name="frm" method="post" action="logout.php">
+  <label>
+  <input name="submit" type="submit" class="logout-container" value="Log out">
+  </label>
+</form>
 </div>
 
 <div class="sidebar">

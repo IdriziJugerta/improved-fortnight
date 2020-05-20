@@ -93,7 +93,7 @@ require_once 'includes/dbcon.php';
                     <table>
                               <!-- afishojme teatrot dhe kohet e shfaqjeve -->
               <?php
-                    
+                      if(isset($_SESSION['userId'])){
                                         while($row2=mysqli_fetch_assoc($rez2)){
                                         $sqlt="SELECT * FROM teater WHERE teater_id='".$row2['teater_id']."'";
                                         $rezt=mysqli_query($conn,$sqlt)  or die(mysqli_error($conn));
@@ -121,7 +121,8 @@ require_once 'includes/dbcon.php';
                           </tr>
                       </div>
                         <?php 
-                        }     
+                                        }  
+                      }     
                 ?>
                 </table>
 

@@ -93,7 +93,7 @@ exit();
 <!DOCTYPE html>
 <head>
 <script
-    src="https://www.paypal.com/sdk/js?client-id=AdPL6ygaOlizOZ-hT-a-RSvWcYacqaInboNkkG4sjBMTKU4FcldJZ7KlSO7L4pPlH8s6AOdzQd33stCd"> // Required. Replace SB_CLIENT_ID with your sandbox client ID.
+    src="https://www.paypal.com/sdk/js?client-id=AeY8n5XlOGvfR8jPLj6rPKwq1R2qkCdMoLmNoYQUkiAMp-UTOPsMoEYZhF7EH1hwDOwD4mIFWnPQslF9"> // Required. Replace SB_CLIENT_ID with your sandbox client ID.
   </script>
 </head>
    <body>

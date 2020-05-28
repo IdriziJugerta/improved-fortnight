@@ -17,8 +17,8 @@ class PayPalClient
 
     public static function environment()
     {
-        $clientId = "AdPL6ygaOlizOZ-hT-a-RSvWcYacqaInboNkkG4sjBMTKU4FcldJZ7KlSO7L4pPlH8s6AOdzQd33stCd";
-        $clientSecret = "ECux3BWv3ulOnRoHlJZRm66ZoceJTG41gxFIN5PvoV7UJ7I4r9RCC4cPl2Z1hfLOgKpz46_3dvIkg6cQ";
+        $clientId = "AeY8n5XlOGvfR8jPLj6rPKwq1R2qkCdMoLmNoYQUkiAMp-UTOPsMoEYZhF7EH1hwDOwD4mIFWnPQslF9";
+        $clientSecret = "ECRnz_S8oy6ubrTTqxPXBEhIbM-9HpSFoNN8EoaMogtKnUklKeG8icSoWHxSCtj6NryDnSmSCcb9lnE3";
         return new SandboxEnvironment($clientId, $clientSecret);
     }
 }

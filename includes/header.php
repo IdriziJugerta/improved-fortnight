@@ -42,7 +42,7 @@ session_start();
     
     
     	<li class="nav-item">
-    <a class="nav-link " href="contact.html" >Contact Us</a>
+    <a class="nav-link " href="includes/footerTHE@HO.php" >Contact Us</a>
     </li>
     <?php
     //nese user nuk do jete i logguar  do shfaqet log in

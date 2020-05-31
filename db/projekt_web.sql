@@ -260,33 +260,38 @@ ALTER TABLE `user`
 --
 ALTER TABLE `opinion`
   ADD CONSTRAINT `opinion_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `user` (`userId`),
-  ADD CONSTRAINT `opinion_ibfk_2` FOREIGN KEY (`idShfaqje`) REFERENCES `shfaqje` (`shfaqje_id`);
+  ADD CONSTRAINT `opinion_ibfk_2` FOREIGN KEY (`idShfaqje`) REFERENCES `shfaqje` (`shfaqje_id`)
+   ON DELETE CASCADE;
 
 --
 -- Constraints for table `orar`
 --
 ALTER TABLE `orar`
   ADD CONSTRAINT `orar_ibfk_1` FOREIGN KEY (`idSalle`) REFERENCES `salle` (`salle_id`),
-  ADD CONSTRAINT `orar_ibfk_2` FOREIGN KEY (`idShfaq`) REFERENCES `shfaqje` (`shfaqje_id`);
+  ADD CONSTRAINT `orar_ibfk_2` FOREIGN KEY (`idShfaq`) REFERENCES `shfaqje` (`shfaqje_id`)
+   ON DELETE CASCADE;
 
 --
 -- Constraints for table `rezervim`
 --
 ALTER TABLE `rezervim`
   ADD CONSTRAINT `rezervim_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`userId`),
-  ADD CONSTRAINT `rezervim_ibfk_3` FOREIGN KEY (`orarId`) REFERENCES `orar` (`idOrar`);
+  ADD CONSTRAINT `rezervim_ibfk_3` FOREIGN KEY (`orarId`) REFERENCES `orar` (`idOrar`)
+   ON DELETE CASCADE;
 
 --
 -- Constraints for table `salle`
 --
 ALTER TABLE `salle`
-  ADD CONSTRAINT `salle_ibfk_1` FOREIGN KEY (`t_id`) REFERENCES `teater` (`teater_id`);
+  ADD CONSTRAINT `salle_ibfk_1` FOREIGN KEY (`t_id`) REFERENCES `teater` (`teater_id`)
+   ON DELETE CASCADE;
 
 --
 -- Constraints for table `shfaqje`
 --
 ALTER TABLE `shfaqje`
-  ADD CONSTRAINT `shfaqje_ibfk_1` FOREIGN KEY (`salleId`) REFERENCES `salle` (`salle_id`);
+  ADD CONSTRAINT `shfaqje_ibfk_1` FOREIGN KEY (`salleId`) REFERENCES `salle` (`salle_id`)
+   ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -14,11 +14,7 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-<!-- 
-<script language="javascript" type="text/javascript" 
-src="footerTHE@HO.php"></script>
-<script language="javascript" type="text/javascript" 
-      src="header.php"></script> -->
+
 </head>
 
 <body style="background-color:black;text-align:center">
@@ -38,17 +34,18 @@ include 'includes/header.php';
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
+    <a href= "shfaqjet.php">
       <img src=".\images\pic5.png"
 	  class="d-block w-100">
     </div>
 	
     <div class="carousel-item">
-   <a href= '#'> <img src=".\images\galaksia.jpg" 
-	  class="d-block w-100" > </a>
+   <a href= "shfaqjet.php"> <img src=".\images\galaksia.jpg" 
+	  class="d-block w-100"   > </a>
 	</div>
 	
     <div class="carousel-item">
-      <a href= '#'><img src=".\images\udha e qumshtit1.jpg" class="d-block w-100" > </a>
+      <a href= "shfaqjet.php"><img src=".\images\udha e qumshtit1.jpg" class="d-block w-100" > </a>
 	  
     </div>
   </div>

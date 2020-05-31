@@ -15,7 +15,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
   
   </head>
-  
+
   <body>
   
   <section id="footer">
@@ -62,20 +62,9 @@
           <hr class="w-100 clearfix d-md-none">
     
           <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold">Evente</h6>
-            <p>
-                <a href="#!">Ne dhe Teatri</a>
-            <p>
-              <a href="#!">Me gjyshrit ne teater</a>
-            </p>
-            <p>
-              <a href="#!">Copeze drame</a>
-            </p>
-            <p>
-              <a href="#!">Endrra ne nje nate vere</a>
-            </p>
-          </div>
+         
+
+          
     
           <!-- Grid column -->
           <hr class="w-100 clearfix d-md-none">

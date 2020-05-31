@@ -34,7 +34,7 @@ include 'includes/header.php';
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-    <a href= "shfaqjet.php">
+    <a href=  "shfaqjet.php">>
       <img src=".\images\pic5.png"
 	  class="d-block w-100">
     </div>

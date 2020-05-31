@@ -9,7 +9,7 @@ $result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
 <html>
 <head>
 <title>Salla</title>
-<link rel="stylesheet" type="text/css" href="salleStyle.css" />
+<link rel="stylesheet" type="text/css" href="adminStyle.css" />
 </head>
 <body>
 </br>

@@ -213,7 +213,9 @@ $id=$row['salle_id'];
                   <input type="number" id="pay" name="pagesa" placeholder="cmimi" min="100">
                   
                   <input type="hidden" name="orari" value="<?php echo $orari;?>">
-                  <input type="hidden" name="shfaqja" value="<?php echo $row['shfaqje_emer'];?>">
+                  
+                 <input type="hidden" name="shfaqja" value="<?php echo $row['shfaqje_emer'];?>">
+                 
                   <input type="hidden" name="user" value="<?php echo $_SESSION['userId'];?>">
 
 

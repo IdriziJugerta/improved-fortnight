@@ -206,7 +206,7 @@ $id=$row['salle_id'];
 
                   <input type="text" name ="tSalle" value="<?php echo $v['emer_salle'];?>">
 
-                  <input type="number" id="seats" name="noSeats" placeholder="numri i vendeve" oninput="calcPrice()">
+                  <input type="number" id="seats" name="noSeats" required placeholder="numri i vendeve" oninput="calcPrice()">
 
                   <input type="number" id="pay" name="pagesa" placeholder="cmimi" min="100">
                   

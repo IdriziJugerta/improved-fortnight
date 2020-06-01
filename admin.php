@@ -93,10 +93,10 @@ a {
 
 <div class="sidebar">
     <ul>
-    <li><img src="images/theatre.jpg" height="75" width="75"> <a href="teaterCRUD.php" target="_blank">Teater</a></li>
-    <li><img src="images/shfaqje.jpg" height="75" width="75"> <a href="shfaqje.php" target="_blank">Shfaqje</a></li>
-    <li><img src="images/salle.jpg" height="75" width="75"> <a href="salle.php" target="_blank">Salle</a></li>
     <li><img src="images/time.jpg" height="75" width="75"> <a href="orarCRUD.php" target="_blank">Orar</a></li>
+    <li><img src="images/salle.jpg" height="75" width="75"> <a href="salle.php" target="_blank">Salle</a></li>
+    <li><img src="images/shfaqje.jpg" height="75" width="75"> <a href="shfaqje.php" target="_blank">Shfaqje</a></li>
+    <li><img src="images/theatre.jpg" height="75" width="75"> <a href="teaterCRUD.php" target="_blank">Teater</a></li>
     </ul>
   </div>
 

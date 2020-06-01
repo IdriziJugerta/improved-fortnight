@@ -36,6 +36,23 @@ $row=mysqli_fetch_assoc($rez);
 $sql="SELECT * FROM user WHERE userId='$user'";
 $rez=mysqli_query($conn,$sql) or die(mysql_error($conn));
 $rowu=mysqli_fetch_assoc($rez); 
+////////////////////
+
+
+$sql ="select * from salle where emer_salle='". $v['emer_salle']."'";
+$result=mysqli_query($conn,$sql) or die(mysqli_error($conn));
+$row=mysqli_fetch_assoc($result);
+$id=$row['salle_id'];
+
+
+
+// $rezId=$rowR['rezervim_id'];
+// $currentd=date('Y-m-d H:i:s');
+
+
+
+
+
 ?>
 <html>
 
@@ -157,22 +174,6 @@ $rowu=mysqli_fetch_assoc($rez);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <div class="booking-panel">
         <div class="booking-panel-section booking-panel-section1">
             <h2   style= 'text-align: center; color:	#D3D3D3';>RESERVE YOUR TICKET</h2>
@@ -210,19 +211,20 @@ $rowu=mysqli_fetch_assoc($rez);
                   <input type="number" id="seats" name="noSeats" placeholder="numri i vendeve" oninput="calcPrice()">
 
                   <input type="number" id="pay" name="pagesa" placeholder="cmimi" min="100">
+                  
                   <input type="hidden" name="orari" value="<?php echo $orari;?>">
                   <input type="hidden" name="shfaqja" value="<?php echo $row['shfaqje_emer'];?>">
                   <input type="hidden" name="user" value="<?php echo $_SESSION['userId'];?>">
 
 
                   <?php
-//kontrollojme nese numri i vendeve ne salle ka arritur ne zero atehere  nuk mund te behet rezervimi, butoni behet disabled
+//kontrollojme nese numri i vendeve ne salle ka arritur ne zero atehere, ose ne rast se eshte me i madh se numri i vendeve qe ka salla nuk mund te behet rezervimi, butoni behet disabled
                     if($v['seats']>0)
                     { ?>
                   <button style="background-color:gray;" type="submit" value="submit" name="submit" class="form-btn">Book a Seat</button>
                       <?php
                        }
-                        else if($v['seats']==0)
+                        else if($v['seats']==0 )
                        {
                       ?>
 <button type="submit" value="submit" name="submit" class="form-btn" disabled>Book a Seat</button>

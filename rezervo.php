@@ -7,6 +7,8 @@ $user=$_POST['user'];
 $orari=$_POST['orari'];
 $seats=$_POST['noSeats'];
 $pagesa=$_POST['pagesa'];
+$salla=$_POST['tSalle'];ptoj
+$date=$_POST['date'];
 $status=1;
 $_SESSION['shfaqje']=$_POST['shfaqja'];
 
@@ -16,6 +18,24 @@ if($result)
 echo "<h2> Rezervimi u be.</h2><h4>Te dhenat ndodhen tashme ne emailin tuaj.</h4><br><br><br>";
 else
 echo mysqli_error($conn);
+
+ $sql ="select * from salle where emer_salle='".$salla."'";
+ $result=mysqli_query($conn,$sql) or die(mysqli_error($conn));
+ $row=mysqli_fetch_assoc($result);
+ $id=$row['salle_id'];
+
+ //heqja e vendeve
+ $currentd=date('Y-m-d H:i:s');
+ if($currentd<$date){
+ $seats_left =$row['seats']-$seats;
+ $sqlU="UPDATE salle SET seats = $seats_left where salle_id=$id";
+ mysqli_query($conn,$sqlU) or die(mysqli_error($conn));
+ }
+ else{
+   exit();
+ }
+
+
 // DERGIMI NE EMAIL 
 //marrim email e user
 $queryUser="select * from user where userId='".$user."'";

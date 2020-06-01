@@ -63,7 +63,7 @@ while($teater_data = mysqli_fetch_array($result))
             </tr>
             <tr>
                 <td><label>Nr. Telefoni</label></td>
-                <td><input type="number" name="tel" placeholder="Nr telefoni"  pattern="^(?=.*06[7-9]+.*)(?=.*[0-9]+.*)[0-9]{7,}$" value=<?php echo $tel;?>></td>
+                <td><input type="tel" name="tel" placeholder="Nr telefoni"  pattern="^(?=.*06[7-9]+.*)(?=.*[0-9]+.*)[0-9]{7,}$" required value=<?php echo $tel;?>></td>
             </tr>
             <tr>
                 <td><input type="hidden" name="teater_id" value=<?php echo $_GET['teater_id'];?>></td>

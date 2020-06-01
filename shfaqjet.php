@@ -5,7 +5,7 @@
   $sql="SELECT * FROM shfaqje";
     $rez=mysqli_query($conn,$sql);
     
-$sql="SELECT * FROM rezervim INNER JOIN orar on orarId=idOrar ";
+$sql="SELECT * FROM rezervim INNER JOIN orar on orarId=idOrar INNER JOIN salle on idSalle=salle_id ";
 $result=mysqli_query($conn,$sql) or die(mysqli_error($conn));
 while($rowR=mysqli_fetch_assoc($result)){
    $rezId=$rowR['rezervim_id'];
@@ -15,7 +15,13 @@ while($rowR=mysqli_fetch_assoc($result)){
        $sqlR="UPDATE rezervim SET status = 0 where rezervim_id=$rezId";
      mysqli_query($conn,$sqlR) or die(mysqli_error($conn));
 
- 
+     $nrSeats=$rowR['seats']+$rowR['no_seats'];
+     $id=$rowR['salle_id'];
+     $sqlU="UPDATE salle SET seats = $nrSeats where salle_id=$id";
+     mysqli_query($conn,$sqlU) or die(mysqli_error($conn));
+     $rezId=$rowR['rezervim_id'];
+     $sql="DELETE FROM rezervim WHERE rezervim_id=$rezId";
+     mysqli_query($conn,$sql) or die(mysqli_error($conn));
      }else{
           $sqlR="UPDATE rezervim SET status = 1 where rezervim_id=$rezId";
           mysqli_query($conn,$sqlR) or die(mysqli_error($conn));
@@ -23,26 +29,6 @@ while($rowR=mysqli_fetch_assoc($result)){
      }
      }
 
-     $sql="SELECT * FROM rezervim INNER JOIN orar on orarId=idOrar INNER JOIN salle on idSalle=salle_id";
-     $result=mysqli_query($conn,$sql) or die(mysqli_error($conn));
-     while($rowR=mysqli_fetch_assoc($result)){
-       if($rowR['status']==0){
- $nrSeats=$rowR['seats']+$rowR['no_seats'];
- $id=$rowR['salle_id'];
- $sqlU="UPDATE salle SET seats = $nrSeats where salle_id=$id";
- mysqli_query($conn,$sqlU) or die(mysqli_error($conn));
- $rezId=$rowR['rezervim_id'];
- $sql="DELETE FROM rezervim WHERE rezervim_id=$rezId";
- mysqli_query($conn,$sql) or die(mysqli_error($conn));
-       }
-       else{
-$id=$rowR['salle_id'];
-
-$nrSeat=$rowR['seats'];
- $sqlU="UPDATE salle SET seats = $nrSeat where salle_id=$id";
- mysqli_query($conn,$sqlU) or die(mysqli_error($conn));
-       }
-     }
 
 ?>
 

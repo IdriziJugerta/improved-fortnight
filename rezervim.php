@@ -27,10 +27,6 @@ $query1="select * from teater where teater_id='".$kodTeater."'";
 $result1=mysqli_query($conn,$query1);
 $v1=mysqli_fetch_assoc($result1);
 
-//marrim te dhenat e shfaqjes
-$sql="SELECT * FROM shfaqje WHERE shfaqje_id='$kodShfaqje'";
-$rez=mysqli_query($conn,$sql) or die(mysql_error($conn));
-$row=mysqli_fetch_assoc($rez); 
 
 //marrim te dhenat e userit
 $sql="SELECT * FROM user WHERE userId='$user'";
@@ -43,13 +39,6 @@ $sql ="select * from salle where emer_salle='". $v['emer_salle']."'";
 $result=mysqli_query($conn,$sql) or die(mysqli_error($conn));
 $row=mysqli_fetch_assoc($result);
 $id=$row['salle_id'];
-
-
-
-// $rezId=$rowR['rezervim_id'];
-// $currentd=date('Y-m-d H:i:s');
-
-
 
 
 
@@ -184,7 +173,16 @@ $id=$row['salle_id'];
         <div class="booking-panel-section booking-panel-section3">
             <div class="movie-box">
               <!--  <img src="" alt="">     -->
+              <?php
+              //marrim te dhenat e shfaqjes
+            $sql="SELECT * FROM shfaqje WHERE shfaqje_id=$kodShfaqje";
+            $rez=mysqli_query($conn,$sql) or die(mysql_error($conn));
+            $row=mysqli_fetch_assoc($rez); 
+
+              ?>
               <p> <img src='images/<?php echo $row['image']; ?>'style= "width:80%  ">  </div>
+
+              
         </div>
         <div class="booking-panel-section booking-panel-section4">
             <div class="title"></div>
@@ -220,20 +218,20 @@ $id=$row['salle_id'];
 
 
                   <?php
-//kontrollojme nese numri i vendeve ne salle ka arritur ne zero atehere, ose ne rast se eshte me i madh se numri i vendeve qe ka salla nuk mund te behet rezervimi, butoni behet disabled
-                    if($v['seats']>0)
-                    { ?>
+//kontrollojme nese numri i vendeve ne salle ka arritur ne zero atehere,  nuk mund te behet rezervimi, butoni behet disabled
+                    // if($v['seats']>0)
+                    // { ?>
                   <button style="background-color:gray;" type="submit" value="submit" name="submit" class="form-btn">Book a Seat</button>
                       <?php
-                       }
-                        else if($v['seats']==0 )
-                       {
+                    //    }
+                    //     else if($v['seats']==0 )
+                    //    {
                       ?>
-<button type="submit" value="submit" name="submit" class="form-btn" disabled>Book a Seat</button>
+<!-- <button type="submit" value="submit" name="submit" class="form-btn" disabled>Book a Seat</button> -->
 
          <?php
 
-}
+//}
 ?>
                 </form>
               </div>

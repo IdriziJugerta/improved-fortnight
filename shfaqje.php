@@ -18,6 +18,7 @@ $result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
 <form name="frmShow" method="post" action="">
 <table border="1" cellpadding="10" cellspacing="3" width="500" align="center" style="padding-top:25px;">
 <tr>
+<th>Shfaqje ID</th>
 <th>salleId</th>
 <th>Emer Shfaqje</th>
 <th>Cast</th>
@@ -29,6 +30,7 @@ $result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
 <?php
 while($show_data = mysqli_fetch_array($result)) {
      echo "<tr>";
+     echo "<td>".$show_data["shfaqje_id"]."</td>";
      echo "<td>".$show_data["salleId"]."</td>";
      echo "<td>".$show_data["shfaqje_emer"]."</td>";
      echo "<td>".$show_data["cast"]."</td>";

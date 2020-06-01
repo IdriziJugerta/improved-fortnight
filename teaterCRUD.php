@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 //perfshin file qe ben lidhjen me databazen
 include_once("includes/dbcon.php");
 //merr te dhenat e teatrit nga databaza
@@ -17,6 +17,7 @@ $result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
     <form name="frm" method="post" action="">
         <table border="1" cellpadding="10" cellspacing="3" width="500" align="center" style="padding-top:25px;">
             <tr>
+                <th>ID Teatri</th>
                 <th>Emer Teatri</th>
                 <th>Adrese</th>
                 <th>Email</th>
@@ -28,6 +29,8 @@ $result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
             echo "
             <tr>
                 ";
+                echo "
+                <td>".$teater_data["teater_id"]."</td>";
                 echo "
                 <td>".$teater_data["teater_emer"]."</td>";
                 echo "

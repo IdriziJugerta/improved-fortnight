@@ -41,7 +41,7 @@ while($salle_data = mysqli_fetch_array($result))
 <html>
 <head>
 	<title>Edit te dhenat e salles</title>
-<link rel="stylesheet" type="text/css" href="salleStyle.css" />
+<link rel="stylesheet" type="text/css" href="adminStyle.css" />
 </head>
 
 <body>

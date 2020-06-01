@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Shto Salle</title>
-<link rel="stylesheet" type="text/css" href="salleStyle.css" />
+<link rel="stylesheet" type="text/css" href="adminStyle.css" />
 </head>
 <body>
 <br/><br/>
